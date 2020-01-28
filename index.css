@@ -1,0 +1,240 @@
+* {
+    /* this will work because it wont use inheritance */
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    /* this will not work because of display:block for all elements */
+    /* box-sizing: border-box; */
+}
+#product-overview{
+    background: url("freedom.jpg");
+
+    width: 100%;
+    /*if % then will use % of parent */
+    height: 528px;
+    padding: 10px;
+    /*  if box-sizing: content-box means we are setting width and height of content not the box
+     so any border or padding will not be added, here the height will be height + 10 + 10 + 5 + 5 = 558; 
+    and width will be width + 10 + 10 + 5 + 5 = 530; to avoid this use box-sizing: border-box means set widht and height of the box including 
+    content + padding + border */
+    /* box-sizing: border-box; */
+    /* padding: 20px; */
+    /* order won't matter as the values are different*/
+    /* border: 5px solid black; */
+    /* if any element below #product-overview also has margin then the bigger margin will win and it will be merged, 
+    e.g. if below element has margin of 30px then this 20px marging of #product-overview and 30px of below element margin will be merged
+    and bigger margin i.e. 30px will win. */
+    /* margin: 20px; */
+}
+
+
+
+.section-title{
+    color: #2ddf5c;
+    /* inherit from the parent; */
+    font-family: inherit; 
+    text-align: center;
+}
+
+/* h1{
+    color: white;
+    font-family: sans-serif;
+} */
+
+/* this will override font-family: 'Anton', sans-serif;; */
+/* any h1 tag in #product-overview id tags */
+#product-overview h1{ 
+    font-family: 'Anton', sans-serif;;
+}
+
+.plan{
+    background: #d5ffdc;
+    text-align: center;
+    display: inline-block;
+    padding: 16px;
+    margin: 8px;
+    width: 30%;
+    vertical-align: middle;
+}
+
+.plan--highlighted{
+    background: #19b84c;
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.plan__annotation{
+    background: white;
+    color: #19b84c;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.plan__title{
+    color: #0e4f1f;
+}
+
+.plan__price{
+    color: #858585;
+}
+
+.plan--highlighted .plan__title{
+    color:white
+}
+
+.plan--highlighted .plan__price{
+    color: #0e4f1f;
+}
+
+.plan__features{
+    /* remove the bullet points*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan__feature{
+    margin: 8px 0;
+}
+
+.button{
+    background: #0e4f1f;
+    color: white;
+    font: inherit;
+    border: 1.5px solid #0e4f1f;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:active{
+    background: white;
+    color: #0e4f1f;
+}
+
+.button:focus{
+    outline: none;
+}
+
+#key-features{
+    background: #ff1b68;
+    margin-top: 80px;
+    padding: 16px;
+}
+
+#key-features .section-title{
+    color: white;
+    margin: 32px;
+
+}
+
+.key-feature__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.key-feature{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+
+.key-feature__image{
+    background: #ffcede;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #424242;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.key-feature__description{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+.main-header {
+    width: 100%;
+    background-color: #2ddf5c;
+    padding: 8px 16px ;
+}
+
+.main-header > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-header__brand{
+    color: #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.main-nav{
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 74px);
+    vertical-align: middle;
+
+}
+
+.main-nav__items{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav__item{
+    /* if display is inline then margin top and bottom wont work, they sit next to each other
+     , block will use full width and can have padding and margin , inline-block sit next to each other and apply padding and margin*/
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.main-nav__item a{
+    color:  #0e4f1f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+.main-nav__item a::after {
+    content: " (?)";
+    color:red;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+    color:white;
+    border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a{
+    color: white;
+    background: #ff1b68;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active{
+    color: #ff1b68;
+    background: white;
+   border: none;
+}
+
+/* p::first-letter{
+    color: red;
+    font-size: 20px;
+} */
+
