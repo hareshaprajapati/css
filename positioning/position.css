@@ -1,0 +1,56 @@
+html {
+    background: #b3b3b3;
+    padding: 15px;
+    border: 5px solid white;
+    margin: 15px;
+    height: 2000px;
+    /* if overflow hidden only in html but not in body it wont affect */
+    overflow: hidden;
+}
+
+body {
+    background: #fa923f;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 0;
+    /* it will pass this overflow to html but if html already have overflow property then it will not pass and wont show the content
+    which are overflowed */
+    overflow: hidden;
+
+  }
+  
+.parent {
+    background: white;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    top:200px;
+    left:50px;
+  }
+  
+.parent div {
+    background: rgb(105, 105, 109);
+    color: white;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+/* .parent .child-1{ */
+    /* fixed means it relates to the view port, it is taken out of the document flow */
+    /* position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    margin:0;
+    box-sizing: border-box;
+}  */
+
+/* .parent .child-1{ */
+    /* if relative, it is relative to the element itself  it is not taken out of the document flow*/
+    /* position: relative;
+    top:300px;
+    left:50px;
+} */

@@ -13,6 +13,9 @@ body{
     width: 100%;
     background-color: #2ddf5c;
     padding: 8px 16px ;
+    /* if margin is added to the any parent element then we need to set top and left and all */
+    position:fixed;
+    z-index: 1;
 }
 
 .main-header > div {
@@ -42,7 +45,7 @@ body{
 }
 
 .main-nav__item{
-    /* if display is inline then margin top and bottom wont work, they sit next to each other
+    /* if display is inline then margin top and bottom, width wont work, they sit next to each other
      , block will use full width and can have padding and margin , inline-block sit next to each other and apply padding and margin*/
     display: inline-block;
     margin: 0 20px;
