@@ -15,6 +15,8 @@ body{
     padding: 8px 16px ;
     /* if margin is added to the any parent element then we need to set top and left and all */
     position:fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
 }
 
@@ -28,6 +30,13 @@ body{
     text-decoration: none;
     font-weight: bold;
     font-size: 22px;
+    height: 22px;
+    display: inline-block;
+}
+
+.main-header__brand img{
+    /* if surrounding element is not inline-block then % wont work */
+    height: 100%;
 }
 
 .main-nav{
